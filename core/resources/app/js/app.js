@@ -6,3 +6,11 @@ Vue.component('up-header', {
     </header>
     `
 })
+
+Vue.component('up-footer', {
+    template: `
+    <footer id="up-footer">
+        <h6>&copy; Desenvolvido por Vinícius Gugelmin, Lucas Rodrigues, Omar Pereira - 2020</h6>
+    </footer>
+    `
+})

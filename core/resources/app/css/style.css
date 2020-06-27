@@ -12,11 +12,14 @@
 /* COMPONENT - App */
 
 #app {
+    height: 100vh;
+    margin: 0;
     font-family: 'Roboto';
 }
 
 /* COMPONENT - Up header */
 #up-header {
+    z-index: 2;
     position: fixed;
     width: 100%;
     padding: 1rem !important;
@@ -32,4 +35,23 @@
     margin: 0;
     color: var(--up-blue);
     font-weight: 600;
+}
+
+/* COMPONENT - Up footer */
+#up-footer {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: var(--up-gray);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-shadow: 0 1px 5px 0;
+    border: 5px solid var(--up-blue);
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
 }
