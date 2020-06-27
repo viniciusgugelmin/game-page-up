@@ -4,26 +4,18 @@
     <meta charset="utf-8">
     <title>Central de jogos</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
     <div id="app">
-        <p>{{ message }}</p>
-        <button v-on:click="reverseMessage">Reverse Message</button>
+        <up-header></up-header>
     </div>
 </body>
 </html>
 <script>
-var app = new Vue({
-    el: '#app',
-
-    data: {
-        message: 'Hello World!'
-    },
-    
-    methods: {
-        reverseMessage() {
-            this.message = this.message.split('').reverse().join('')
-        }
-    }
+new Vue({
+    el: '#app'
 })
 </script>

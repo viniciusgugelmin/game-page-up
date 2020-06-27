@@ -1,0 +1,35 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+/* VARIABLES */
+:root {
+  --up-blue: #0000ba;
+  --up-gray: #efefef;
+}
+
+/* LAYOUT COMPONENTS */
+
+/* COMPONENT - App */
+
+#app {
+    font-family: 'Roboto';
+}
+
+/* COMPONENT - Up header */
+#up-header {
+    position: fixed;
+    width: 100%;
+    padding: 1rem !important;
+    background: var(--up-gray);
+    box-shadow: 0 1px 5px 0;
+    border: 5px solid var(--up-blue);
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+}
+
+#up-header h3 {
+    margin: 0;
+    color: var(--up-blue);
+    font-weight: 600;
+}
