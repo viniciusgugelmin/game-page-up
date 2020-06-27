@@ -1,3 +1,11 @@
+Vue.component('up-animation', {
+    template: `
+    <div class="up-animation">
+        <div class="up-dual-ring"></div>
+    </div>
+    `
+})
+
 Vue.component('up-header', {
     template: `
     <header id="up-header">
