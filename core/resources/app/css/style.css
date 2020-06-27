@@ -3,8 +3,12 @@
 
 /* VARIABLES */
 :root {
-  --up-blue: #0000ba;
-  --up-gray: #efefef;
+    --up-blue: #03032d;
+    --up-dark-blue: #000008;
+    --up-gray: #efefef;
+    --up-dark-gray: #121212;
+    --up-dark-gray-2: #0f0f0f;
+    --up-white: #bdbdbd;
 }
 
 /* LAYOUT COMPONENTS */
@@ -15,6 +19,7 @@
     height: 100vh;
     margin: 0;
     font-family: 'Roboto';
+    background: var(--up-dark-gray);
 }
 
 /* COMPONENT - Up header */
@@ -23,18 +28,25 @@
     position: fixed;
     width: 100%;
     padding: 1rem !important;
-    background: var(--up-gray);
-    box-shadow: 0 1px 5px 0;
-    border: 5px solid var(--up-blue);
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
+    background: var(--up-blue);
+    box-shadow: 0 0 8px 2px black;
+}
+
+#up-header img {
+    height: 50px;
 }
 
 #up-header h3 {
+    display: inline-block;
     margin: 0;
-    color: var(--up-blue);
+    color: var(--up-white);
     font-weight: 600;
+}
+
+#up-header h6 {
+    margin-left: 58px;
+    margin-top: -10px;
+    color: var(--up-white);
 }
 
 /* COMPONENT - Up footer */
@@ -43,15 +55,59 @@
     position: fixed;
     width: 100%;
     bottom: 0;
-    background: var(--up-gray);
+    background: var(--up-blue);
+    color: var(--up-white);
     display: flex;
     justify-content: center;
     text-align: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    box-shadow: 0 1px 5px 0;
-    border: 5px solid var(--up-blue);
-    border-right: 0;
-    border-bottom: 0;
-    border-left: 0;
+    box-shadow: 0 0 8px 2px black;
+}
+
+/* LAYOUT */
+#up-menu {
+    display: inline-block;
+    width: 100%;
+    margin-top: 125px;
+}
+
+#up-menu .up-flex {
+    display: flex;
+    margin: 0 20%;
+}
+
+#up-menu .up-flex .jogo {
+    flex-grow: 1;
+    height: 175px;
+    width: 200px;
+    margin: 0 10%;
+    padding: 10px;
+    box-shadow: 0 0 8px 1px black;
+    background: var(--up-dark-gray-2);
+    border-radius: 15px;
+    text-align: center;
+}
+
+#up-menu .up-flex .jogo h6 {
+    font-weight: bold;
+    color: var(--up-white)
+}
+
+#up-menu img {
+    opacity: 0.75;
+    width: 75%;
+    max-width: 200px;
+    border-radius: 5px;
+}
+
+#up-menu .up-flex .jogo .btn {
+    margin-top: 10px;
+    padding: 0.2rem 0.5rem;
+    font-weight: bold;
+    font-size: 0.75rem;
+    border-radius: 5px;
+    background: black;
+    border: 1px solid black;
+    color: var(--up-white);
 }
