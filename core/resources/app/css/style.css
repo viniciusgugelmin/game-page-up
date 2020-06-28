@@ -112,6 +112,47 @@
     color: var(--up-white);
 }
 
+/* JOGO DA VELHA */
+.CSS{
+width: 100px;
+height: 100px;
+background: #e74c3c;
+font-size: 80px;
+color: #ffffff;
+cursor: pointer;
+position: relative;
+}
+.CLASSCSS{
+background: #ffffff;
+}
+.CAB{
+text-shadow:1px -1px 0px #222222;
+background: #e74c3c;
+font-size: 20px;
+position: relative;
+color: #ffffff;
+border-radius:10px 10px 10px 10px;
+}
+.jogador{
+text-shadow:1px -1px 0px #222222;
+background: #e74c3c;
+font-size: 20px;
+color: #ffffff;
+border-radius:10px 10px 10px 10px;
+position: relative;
+top: 20px;
+}
+.jogadores{
+text-shadow:1px -1px 0px #222222;
+background: #e74c3c;
+font-size: 20px;
+color: #ffffff;
+border-radius:10px 10px 10px 10px;
+}
+.velhas {
+  text-align: center;
+}
+
 /* ANIMATIONS */
 .up-animation {
     z-index: 3;

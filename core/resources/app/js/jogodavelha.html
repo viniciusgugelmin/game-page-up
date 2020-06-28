@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Jogo da velha</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jogodavelha/app.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+    <div class="centro" align="center">
+        <table border="7px" class="CAB">
+            <form name="entrada">
+                <tr>
+                    <td>
+                        PLAYER 1 : <input type="text" size="15px" name="nome1" class="CAB" onBlur="Verifica_Nome1(this.value)">
+                    </td>
+                    <td>
+                        SCORE : <input type="text" size="1" name="placar1" class="CAB">
+                    </td>
+                    <td class="velhas">
+                        DRAW
+                    </td>
+                </tr>
+                <tr>
+                    <td>PLAYER 2 : <input type="text" size="15px" name="nome2" class="CAB" onBlur="Verifica_Nome2(this.value)"></td>
+                    <td>SCORE : <input type="text" size="1" name="placar2" class="CAB"></td>
+                    <td class="velhas"><input type="text" size="5" name="velhas" class="CAB"></td>
+                </tr>
+                <tr>
+
+                </tr>
+            </form>
+        </table>
+        <br>
+
+        <table class="CLASSCSS">
+
+            <tr>
+                <td align="center" valign="middle" id="matriz11" class="CSS" onclick="joga(this.id);verificar();"></td>
+                <td align="center" valign="middle" id="matriz12" class="CSS" onclick="joga(this.id);verificar();"></td>
+                <td align="center" valign="middle" id="matriz13" class="CSS" onclick="joga(this.id);verificar();"></td>
+            </tr>
+
+            <tr>
+                <td align="center" valign="middle" id="matriz21" class="CSS" onclick="joga(this.id);verificar();"></td>
+                <td align="center" valign="middle" id="matriz22" class="CSS" onclick="joga(this.id);verificar();"></td>
+                <td align="center" valign="middle" id="matriz23" class="CSS" onclick="joga(this.id);verificar();"></td>
+            </tr>
+
+            <tr>
+                <td align="center" valign="middle" id="matriz31" class="CSS" onclick="joga(this.id);verificar();"></td>
+                <td align="center" valign="middle" id="matriz32" class="CSS" onclick="joga(this.id);verificar();"></td>
+                <td align="center" valign="middle" id="matriz33" class="CSS" onclick="joga(this.id);verificar();"></td>
+            </tr>
+
+        </table>
+
+
+
+
+        <div align="center">
+            <table border="7px" class="jogador">
+                <form name="jogadorr">
+                    <tr>
+                        <td>
+                            PLAYER TURN : <input type="text" size="15px" name="jogadorvez" class="jogadores">
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
