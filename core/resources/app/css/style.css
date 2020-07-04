@@ -7,7 +7,7 @@
     --up-dark-blue: #000008;
     --up-gray: #efefef;
     --up-dark-gray: #121212;
-    --up-dark-gray-2: #0f0f0f;
+    --up-dark-gray-2: #0b0b0b;
     --up-white: #bdbdbd;
 }
 
@@ -15,9 +15,13 @@
 
 /* COMPONENT - App */
 
+body {
+    background: var(--up-dark-gray);
+}
+
 #app {
-    height: 100vh;
     margin: 0;
+    height: 100vh;
     font-family: 'Roboto';
     background: var(--up-dark-gray);
 }
@@ -103,54 +107,79 @@
 
 #up-menu .up-flex .jogo .btn {
     margin-top: 10px;
+    margin-bottom: 125px;
     padding: 0.2rem 0.5rem;
     font-weight: bold;
     font-size: 0.75rem;
     border-radius: 5px;
-    background: black;
-    border: 1px solid black;
-    color: var(--up-white);
+    background: var(--up-white);
+    border: 1px solid var(--up-white);
+    color: var(--up-dark-blue);
 }
 
 /* JOGO DA VELHA */
-.CSS{
-width: 100px;
-height: 100px;
-background: #e74c3c;
-font-size: 80px;
-color: #ffffff;
-cursor: pointer;
-position: relative;
+#up-jogo {
+    display: inline-block;
+    width: 100%;
+    margin-top: 150px;
+    margin-bottom: 125px;
 }
-.CLASSCSS{
-background: #ffffff;
+
+#up-jogo .placar {
+    display: block;
+    width: 375px;
+    margin: auto;
+    padding: 10px;
+    box-shadow: 0 0 8px 1px black;
+    border-radius: 20px;
+    font-size: 20px;
+    color: var(--up-white);
+    background: var(--up-blue);
 }
-.CAB{
-text-shadow:1px -1px 0px #222222;
-background: #e74c3c;
-font-size: 20px;
-position: relative;
-color: #ffffff;
-border-radius:10px 10px 10px 10px;
+
+.placar .input-group-text {
+    margin: 5px;
+    border: 1px solid var(--up-dark-blue);
+    background: var(--up-dark-gray-2);
+    color: var(--up-white);
 }
-.jogador{
-text-shadow:1px -1px 0px #222222;
-background: #e74c3c;
-font-size: 20px;
-color: #ffffff;
-border-radius:10px 10px 10px 10px;
-position: relative;
-top: 20px;
+
+.jogo-da-velha {
+    display: block;
+    width: 300px;
+    margin: 25px auto;
 }
+
+.placar .draw {
+    height: 50px;
+    margin-top: -50%;
+}
+
+.td {
+    width: 100px;
+    height: 100px;
+    border: 1px solid var(--up-dark-blue);
+    background: var(--up-blue);
+    color: var(--up-white);
+    font-size: 45px;
+    cursor: pointer;
+    position: relative;
+}
+
+.mostra-jogador {
+    display: block;
+    margin: 0 auto 8rem auto;
+}
+
 .jogadores{
-text-shadow:1px -1px 0px #222222;
-background: #e74c3c;
-font-size: 20px;
-color: #ffffff;
-border-radius:10px 10px 10px 10px;
+    text-shadow:1px -1px 0px #222222;
+    background: #e74c3c;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius:10px 10px 10px 10px;
 }
-.velhas {
-  text-align: center;
+.draw {
+    text-align: center;
 }
 
 /* ANIMATIONS */

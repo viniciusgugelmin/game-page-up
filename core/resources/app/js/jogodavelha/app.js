@@ -1,157 +1,154 @@
-X = '<font size="100" face="arial black">X</font>';
-O = '<font size="100" face="arial black">O</font>';
-letra = X;
-cont = 0;
+/* Variable declarations */
+//
+// Point markers
+var X = '<font size="100">X</font>';
+var O = '<font size="100">O</font>';
+// Players
+var playerOne;
+var playerTwo;
+// Player turn
+var playerTurn;
+// First play letter
+var letter = X;
+// Counter
+var count = 0;
+// Tic tac toe
+var matriz = [
+    [0,0,0],
+    [0,0,0],
+    [0,0,0],
+];
+// Instructions
+alert("BEM VINDO AO JOGO DA VELHA!\n1- Digite o nome dos jogadores antes de começar\n2- Para jogar contra o computador digite 'CPU' na caixa do PLAYER 2\n3- PLAYER 1 = X, PLAYER 2 = O");
 
-function joga(matriz)
-{
-    on = document.getElementById(matriz).innerHTML;
-    if (on == X || on == O)
-    {
-        alert("Esta posição já foi ocupada!");
-    }
-    else
-    {
-        document.getElementById(matriz).innerHTML = letra;
-        if (letra == X)
-        {
-            letra = O;
-            document.jogadorr.jogadorvez.value = document.entrada.nome2.value
+/* Functions */
+//
+// Main function
+function play(matriz) {
+    let playersName = verifyName();
+
+    if (playersName) {
+        let square = document.getElementById(matriz);
+        playerTurn = document.querySelector('#playerturn');
+
+        if (square.innerHTML != X && square.innerHTML != O) {
+            square.innerHTML = letter;
+
+            if (letter == X) {
+                letter = O;
+                playerTurn.value = playerTwo;
+            } else {
+                letter = X;
+                playerTurn.value = playerOne;
+            }
+
+            count++;
+
+            verify(playerTurn.value);
         }
-        else
-        {
-            letra = X;
-            document.jogadorr.jogadorvez.value = document.entrada.nome1.value
-        }
-        cont++;
+    } else {
+        alert("Você precisa informar o nome dos jogadores!");
     }
 }
+//
+// Play check
+function verify(player) {
+    let matrizId;
 
-function verificar(){
-    A1L1 = document.getElementById('matriz11').innerHTML;
-    A1L2 = document.getElementById('matriz12').innerHTML;
-    A1L3 = document.getElementById('matriz13').innerHTML;
-    A2L1 = document.getElementById('matriz21').innerHTML;
-    A2L2 = document.getElementById('matriz22').innerHTML;
-    A2L3 = document.getElementById('matriz23').innerHTML;
-    A3L1 = document.getElementById('matriz31').innerHTML;
-    A3L2 = document.getElementById('matriz32').innerHTML;
-    A3L3 = document.getElementById('matriz33').innerHTML;
-
-    if (((A1L1 == X) && (A1L2 == X) && (A1L3 == X))
-    ||((A2L1 == X) && (A2L2 == X) && (A2L3 == X))
-    ||((A3L1 == X) && (A3L2 == X) && (A3L3 == X))
-    ||((A1L1 == X) && (A2L1 == X) && (A3L1 == X))
-    ||((A1L2 == X) && (A2L2 == X) && (A3L2 == X))
-    ||((A1L3 == X) && (A2L3 == X) && (A3L3 == X))
-    ||((A1L1 == X) && (A2L2 == X) && (A3L3 == X))
-    ||((A1L3 == X) && (A2L2 == X) && (A3L1 == X))
-
-)
-
-{
-    alert(entrada.nome1.value + ",você venceu!");
-    novo();
-    ponto1()
-
-}
-else if (((A1L1 == O) && (A1L2 == O) && (A1L3 == O))
-||((A2L1 == O) && (A2L2 == O) && (A2L3 == O))
-||((A3L1 == O) && (A3L2 == O) && (A3L3 == O))
-||((A1L1 == O) && (A2L1 == O) && (A3L1 == O))
-||((A1L2 == O) && (A2L2 == O) && (A3L2 == O))
-||((A1L3 == O) && (A2L3 == O) && (A3L3 == O))
-||((A1L1 == O) && (A2L2 == O) && (A3L3 == O))
-||((A1L3 == O) && (A2L2 == O) && (A3L1 == O))
-
-)
-
-{
-    alert(entrada.nome2.value + ",você venceu!");
-    novo();
-    ponto2()
-}
-else if(cont==9){
-    alert("Deu Velha!");
-    novo();
-    velhas();
-}
-if (document.entrada.velhas.value == 10)
-{
-    alert("Vocês são muito ruins, troquem os jogadores por favor!")
-    novoj();
-    novop();
-    novo()
-}
-if (document.entrada.placar1.value == 10)
-{
-    alert(entrada.nome1.value + ",você venceu o jogo, próximo adversário!")
-    novop();
-    document.entrada.nome2.value = ' ';
-    novo()
-}
-if (document.entrada.placar2.value == 10)
-{
-    alert(entrada.nome2.value + ",você venceu o jogo, próximo adversário!")
-    novop();
-    document.entrada.nome1.value = ' ';
-    novo()
-}
-}
-function novo(){
-    for (i=1; i<4; i++){
-        for (j=1; j<4; j++){
-            nomecelula = 'matriz' + i + j
-            document.getElementById(nomecelula).innerHTML = '';
+    for (let y = 0; y < 3; y++) {
+        for (let x = 0; x < 3; x++) {
+            matrizId = 'matriz' + x + y;
+            matriz[x][y] = document.getElementById(matrizId).innerHTML;
         }
     }
-    cont = 0;
-}
-function novoj(){
-    document.entrada.nome1.value = ' ';
-    document.entrada.nome2.value = ' ';
-    cont = 0;
-}
-function Verifica_Nome1()
-{
-    while(entrada.nome1.value=="")
-    {
-        alert("Favor preencher novamente o campo! ");
-        entrada.nome1.value=prompt("Digite novamente o nome","");
+
+    if (((matriz[0][0] == X) && (matriz[0][1] == X) && (matriz[0][2] == X))
+    ||((matriz[1][0] == X) && (matriz[1][1] == X) && (matriz[1][2] == X))
+    ||((matriz[2][0] == X) && (matriz[2][1] == X) && (matriz[2][2] == X))
+    ||((matriz[0][0] == X) && (matriz[1][0] == X) && (matriz[2][0] == X))
+    ||((matriz[0][1] == X) && (matriz[1][1] == X) && (matriz[2][1] == X))
+    ||((matriz[0][2] == X) && (matriz[1][2] == X) && (matriz[2][2] == X))
+    ||((matriz[0][0] == X) && (matriz[1][1] == X) && (matriz[2][2] == X))
+    ||((matriz[0][2] == X) && (matriz[1][1] == X) && (matriz[2][0] == X))) {
+        newRound();
+        playerPoint('#placar1');
+
+    } else if (((matriz[0][0] == O) && (matriz[0][1] == O) && (matriz[0][2] == O))
+    ||((matriz[1][0] == O) && (matriz[1][1] == O) && (matriz[1][2] == O))
+    ||((matriz[2][0] == O) && (matriz[2][1] == O) && (matriz[2][2] == O))
+    ||((matriz[0][0] == O) && (matriz[1][0] == O) && (matriz[2][0] == O))
+    ||((matriz[0][1] == O) && (matriz[1][1] == O) && (matriz[2][1] == O))
+    ||((matriz[0][2] == O) && (matriz[1][2] == O) && (matriz[2][2] == O))
+    ||((matriz[0][0] == O) && (matriz[1][1] == O) && (matriz[2][2] == O))
+    ||((matriz[0][2] == O) && (matriz[1][1] == O) && (matriz[2][0] == O))) {
+        newRound();
+        playerPoint('#placar2');
+
+    } else if (count == 9) {
+        newRound();
+        playerPoint('#draw');
+    } else if (player == 'CPU') {
+        console.log("playCPU")
+        cpuPlay();
     }
 }
-
-function Verifica_Nome2()
-{
-    while (entrada.nome2.value=="")
-    {
-        alert("Favor preencher novamente o campo! ");
-        entrada.nome2.value=prompt("Digite novamente o nome","");
+//
+// Reset tic tac toe table
+function newRound() {
+    for (let y = 0; y < 3; y++) {
+        for (let x = 0; x < 3; x++){
+            matrizId = 'matriz' + x + y;
+            document.getElementById(matrizId).innerHTML = '';
+        }
     }
-}
 
+    letter = X;
+    playerTurn.value = playerOne;
+    
+    count = 0;
+}
+//
+// Verify players name
+function verifyName()
+{
+    if (document.querySelector('#nome1').value.trim() == "") {
+        return false;
 
+    } else {
+        playerOne = document.querySelector('#nome1').value;
+    }
 
+    if (document.querySelector('#nome2').value.trim() == "") {
+        return false;
 
-function ponto1()
-{
-    document.entrada.placar1.value++;
+    } else {
+        playerTwo = document.querySelector('#nome2').value;
+    }
+
+    return true;
 }
-function ponto2()
-{
-    document.entrada.placar2.value++;
+//
+// Mark the points
+function playerPoint(number) {
+    document.querySelector(number).value++;
 }
-function velhas ()
-{
-    document.entrada.velhas.value++;
-}
-function resetvelhas ()
-{
-    document.entrada.velhas.value = ' ';
-}
-function novop()
-{
-    document.entrada.placar1.value = ' ';
-    document.entrada.placar2.value = ' ';
-    resetvelhas ()
+//
+// CPU Play
+function cpuPlay() {
+    let possiblePlays = [];
+    let countPlays = 0;
+
+    for (let y = 0; y < 3; y++) {
+        for (let x = 0; x < 3; x++) {
+            matrizId = 'matriz' + x + y;
+
+            if (document.getElementById(matrizId).innerHTML == '') {
+                possiblePlays[countPlays] = matrizId;
+                countPlays++;
+            }
+        }
+    }
+
+    let selectedPlay = possiblePlays[Math.floor(Math.random() * possiblePlays.length)];
+    play(selectedPlay);
 }
