@@ -173,13 +173,49 @@ body {
 
 .jogadores{
     text-shadow:1px -1px 0px #222222;
-    background: #e74c3c;
     font-size: 20px;
     color: #ffffff;
     border-radius:10px 10px 10px 10px;
 }
+
 .draw {
     text-align: center;
+}
+
+/* JOGO DA FORCA */
+.flex {
+    display: inline-flex !important;
+}
+
+.flex .up-teclado {
+    flex: 1;
+    text-align: center;
+    max-width: 315px !important;
+    margin: 0 auto;
+    background: var(--up-dark-gray-2);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 0 8px 1px black;
+    font-weight: bold;
+}
+
+.flex .up-teclado tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex .up-teclado td {
+    cursor: pointer;
+    color: var(--up-gray);
+    background: var(--up-dark-blue);
+    border-radius: 8px;
+    margin: 0.25rem;
+    padding: 0.5rem;
+}
+
+.letter-active{
+    background: #610603 !important;
 }
 
 /* ANIMATIONS */

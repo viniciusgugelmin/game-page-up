@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Jogo da forca</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="jogodaforca/app.js"></script>
+    <script src="vue/app.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+    <div id="app">
+        <up-animation></up-animation>
+        <up-header></up-header>
+        <div id="up-jogo" class="flex">
+            <table class="up-teclado" id="teclado">
+                <tbody id="teclado-body">
+                    <tr>
+                        <td class="A" onclick="play(this.innerHTML)">A</td>
+                        <td class="B" onclick="play(this.innerHTML)">B</td>
+                        <td class="C" onclick="play(this.innerHTML)">C</td>
+                        <td class="D" onclick="play(this.innerHTML)">D</td>
+                        <td class="E" onclick="play(this.innerHTML)">E</td>
+                        <td class="F" onclick="play(this.innerHTML)">F</td>
+                        <td class="G" onclick="play(this.innerHTML)">G</td>
+                        <td class="H" onclick="play(this.innerHTML)">H</td>
+                        <td class="I" onclick="play(this.innerHTML)">I</td>
+                        <td class="J" onclick="play(this.innerHTML)">J</td>
+                        <td class="K" onclick="play(this.innerHTML)">K</td>
+                        <td class="L" onclick="play(this.innerHTML)">L</td>
+                        <td class="M" onclick="play(this.innerHTML)">M</td>
+                        <td class="N" onclick="play(this.innerHTML)">N</td>
+                        <td class="O" onclick="play(this.innerHTML)">O</td>
+                        <td class="P" onclick="play(this.innerHTML)">P</td>
+                        <td class="Q" onclick="play(this.innerHTML)">Q</td>
+                        <td class="R" onclick="play(this.innerHTML)">R</td>
+                        <td class="S" onclick="play(this.innerHTML)">S</td>
+                        <td class="T" onclick="play(this.innerHTML)">T</td>
+                        <td class="U" onclick="play(this.innerHTML)">U</td>
+                        <td class="V" onclick="play(this.innerHTML)">V</td>
+                        <td class="W" onclick="play(this.innerHTML)">W</td>
+                        <td class="X" onclick="play(this.innerHTML)">X</td>
+                        <td class="Y" onclick="play(this.innerHTML)">Y</td>
+                        <td class="Z" onclick="play(this.innerHTML)">Z</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <up-footer></up-footer>
+    </div>
+</body>
+</html>
+<script>
+new Vue({
+    el: '#app'
+})
+</script>

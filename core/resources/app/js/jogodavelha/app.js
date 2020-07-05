@@ -87,8 +87,7 @@ function verify(player) {
     } else if (count == 9) {
         newRound();
         playerPoint('#draw');
-    } else if (player == 'CPU') {
-        console.log("playCPU")
+    } else if (player.trim() == 'CPU') {
         cpuPlay();
     }
 }
@@ -104,7 +103,7 @@ function newRound() {
 
     letter = X;
     playerTurn.value = playerOne;
-    
+
     count = 0;
 }
 //
