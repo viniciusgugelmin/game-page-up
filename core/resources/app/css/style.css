@@ -183,15 +183,10 @@ body {
 }
 
 /* JOGO DA FORCA */
-.flex {
-    display: inline-flex !important;
-}
-
 .flex .up-teclado {
-    flex: 1;
     text-align: center;
     max-width: 315px !important;
-    margin: 0 auto;
+    margin: 1rem auto;
     background: var(--up-dark-gray-2);
     border-radius: 15px;
     padding: 1rem;
@@ -216,6 +211,37 @@ body {
 
 .letter-active{
     background: #610603 !important;
+}
+
+.flex button {
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+.up-word {
+    display: none;
+    margin: auto;
+    background: var(--up-dark-gray-2);
+    box-shadow: 0 0 8px 1px black;
+    font-weight: bold;
+    color: var(--up-gray);
+}
+
+.up-word tr {
+    display: block;
+    margin: 0.25rem
+}
+
+.up-word td {
+    display: inline-block;
+    margin: 0.25rem;
+}
+
+#imagem-boneco {
+    margin: auto;
+    height: 200px;
+    width: 200px;
+    background-image: url('../../../../../public_html/images/e0.png');
 }
 
 /* ANIMATIONS */

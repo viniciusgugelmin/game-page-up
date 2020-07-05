@@ -15,38 +15,45 @@
         <up-animation></up-animation>
         <up-header></up-header>
         <div id="up-jogo" class="flex">
+            <button type="button" class="btn btn-dark" onclick="getWord()">LOAD WORD</button>
+            <table class="up-word" id="word">
+                <tbody>
+                    <tr id="word-tr"></tr>
+                </tbody>
+            </table>
             <table class="up-teclado" id="teclado">
                 <tbody id="teclado-body">
-                    <tr>
-                        <td class="A" onclick="play(this.innerHTML)">A</td>
-                        <td class="B" onclick="play(this.innerHTML)">B</td>
-                        <td class="C" onclick="play(this.innerHTML)">C</td>
-                        <td class="D" onclick="play(this.innerHTML)">D</td>
-                        <td class="E" onclick="play(this.innerHTML)">E</td>
-                        <td class="F" onclick="play(this.innerHTML)">F</td>
-                        <td class="G" onclick="play(this.innerHTML)">G</td>
-                        <td class="H" onclick="play(this.innerHTML)">H</td>
-                        <td class="I" onclick="play(this.innerHTML)">I</td>
-                        <td class="J" onclick="play(this.innerHTML)">J</td>
-                        <td class="K" onclick="play(this.innerHTML)">K</td>
-                        <td class="L" onclick="play(this.innerHTML)">L</td>
-                        <td class="M" onclick="play(this.innerHTML)">M</td>
-                        <td class="N" onclick="play(this.innerHTML)">N</td>
-                        <td class="O" onclick="play(this.innerHTML)">O</td>
-                        <td class="P" onclick="play(this.innerHTML)">P</td>
-                        <td class="Q" onclick="play(this.innerHTML)">Q</td>
-                        <td class="R" onclick="play(this.innerHTML)">R</td>
-                        <td class="S" onclick="play(this.innerHTML)">S</td>
-                        <td class="T" onclick="play(this.innerHTML)">T</td>
-                        <td class="U" onclick="play(this.innerHTML)">U</td>
-                        <td class="V" onclick="play(this.innerHTML)">V</td>
-                        <td class="W" onclick="play(this.innerHTML)">W</td>
-                        <td class="X" onclick="play(this.innerHTML)">X</td>
-                        <td class="Y" onclick="play(this.innerHTML)">Y</td>
-                        <td class="Z" onclick="play(this.innerHTML)">Z</td>
+                    <tr id="teclado-tr">
+                        <td class="A" id="A" onclick="play(this.innerHTML)">A</td>
+                        <td class="B" id="B" onclick="play(this.innerHTML)">B</td>
+                        <td class="C" id="C" onclick="play(this.innerHTML)">C</td>
+                        <td class="D" id="D" onclick="play(this.innerHTML)">D</td>
+                        <td class="E" id="E" onclick="play(this.innerHTML)">E</td>
+                        <td class="F" id="F" onclick="play(this.innerHTML)">F</td>
+                        <td class="G" id="G" onclick="play(this.innerHTML)">G</td>
+                        <td class="H" id="H" onclick="play(this.innerHTML)">H</td>
+                        <td class="I" id="I" onclick="play(this.innerHTML)">I</td>
+                        <td class="J" id="J" onclick="play(this.innerHTML)">J</td>
+                        <td class="K" id="K" onclick="play(this.innerHTML)">K</td>
+                        <td class="L" id="L" onclick="play(this.innerHTML)">L</td>
+                        <td class="M" id="M" onclick="play(this.innerHTML)">M</td>
+                        <td class="N" id="N" onclick="play(this.innerHTML)">N</td>
+                        <td class="O" id="O" onclick="play(this.innerHTML)">O</td>
+                        <td class="P" id="P" onclick="play(this.innerHTML)">P</td>
+                        <td class="Q" id="Q" onclick="play(this.innerHTML)">Q</td>
+                        <td class="R" id="R" onclick="play(this.innerHTML)">R</td>
+                        <td class="S" id="S" onclick="play(this.innerHTML)">S</td>
+                        <td class="T" id="T" onclick="play(this.innerHTML)">T</td>
+                        <td class="U" id="U" onclick="play(this.innerHTML)">U</td>
+                        <td class="V" id="V" onclick="play(this.innerHTML)">V</td>
+                        <td class="W" id="W" onclick="play(this.innerHTML)">W</td>
+                        <td class="X" id="X" onclick="play(this.innerHTML)">X</td>
+                        <td class="Y" id="Y" onclick="play(this.innerHTML)">Y</td>
+                        <td class="Z" id="Z" onclick="play(this.innerHTML)">Z</td>
                     </tr>
                 </tbody>
             </table>
+            <div id="imagem-boneco"></div>
         </div>
         <up-footer></up-footer>
     </div>
