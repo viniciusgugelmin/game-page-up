@@ -97,11 +97,11 @@ function verifyWord(e) {
         }
     }
 
-
-    checkWin();
+    verifyGame();
 }
-
-function checkWin() {
+//
+// Verify the game conditions
+function verifyGame() {
     if (errors == 6) {
         setTimeout(function(){
             alert("Você perdeu!");
