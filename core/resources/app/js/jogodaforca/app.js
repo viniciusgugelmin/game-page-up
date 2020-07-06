@@ -77,32 +77,40 @@ function verifyWord(e) {
 
         switch (errors) {
             case 1:
-                imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e1.png')";
-                break;
+            imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e1.png')";
+            break;
             case 2:
-                imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e2.png')";
-                break;
+            imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e2.png')";
+            break;
             case 3:
-                imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e3.png')";
-                break;
+            imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e3.png')";
+            break;
             case 4:
-                imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e4.png')";
-                break;
+            imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e4.png')";
+            break;
             case 5:
-                imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e5.png')";
-                break;
+            imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e5.png')";
+            break;
             case 6:
-                imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e6.png')";
-                break;
+            imagemBoneco.style.backgroundImage = "url('../../../../../public_html/images/e6.png')";
+            break;
         }
     }
 
-    if (errors == 6) {
-        alert("Você perdeu!");
-        getWord();
 
+    checkWin();
+}
+
+function checkWin() {
+    if (errors == 6) {
+        setTimeout(function(){
+            alert("Você perdeu!");
+            getWord();
+        }, 100);
     } else if (okay) {
-        alert("Você ganhou!");
-        getWord();
+        setTimeout(function(){
+            alert("Você ganhou!");
+            getWord();
+        }, 100);
     }
 }

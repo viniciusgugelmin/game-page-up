@@ -238,6 +238,7 @@ body {
 }
 
 #imagem-boneco {
+    transform: translateX(-30%);
     margin: auto;
     height: 200px;
     width: 200px;
